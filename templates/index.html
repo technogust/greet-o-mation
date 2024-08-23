@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greetomation - Schedule Your Greetings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#" class="logo">Greetomation</a></li>
+                <li><a href="#message-section">Send a Message</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Send Personalized Messages to Your Loved Ones</h1>
+            <p>Select an occasion, enter your message, and schedule it to be sent on a specific date and time.</p>
+        </section>
+        <section class="message-section" id="message-section">
+            <h2>Send a Scheduled Message</h2>
+            <form id="message-form">
+                <label for="occasion">Select an Occasion:</label>
+                <select id="occasion" name="occasion" required>
+                    <option value="" disabled selected>Select an occasion</option>
+                    <option value="anniversary">Anniversary</option>
+                    <option value="birthday">Birthday</option>
+                    <option value="new_year">New Year</option>
+                    <option value="christmas">Christmas</option>
+                    <option value="thanksgiving">Thanksgiving</option>
+                    <option value="diwali">Diwali</option>
+                    <option value="eid">Eid</option>
+                    <option value="valentines_day">Valentine's Day</option>
+                    <option value="holiday">Holiday</option>
+                </select>
+
+                <label for="message">Enter Your Message:</label>
+                <textarea id="message" name="message" placeholder="Enter your message here" rows="5" required></textarea>
+
+                <label for="sender-name">Your Name:</label>
+                <input id="sender-name" name="sender-name" type="text" placeholder="Enter your name" required>
+
+                <label for="recipient-name">Recipient's Name:</label>
+                <input id="recipient-name" name="recipient-name" type="text" placeholder="Enter recipient's name" required>
+
+                <label for="country-code">Country Code:</label>
+                <input id="country-code" name="country-code" type="text" placeholder="+1" pattern="\+\d{1,3}" required>
+
+                <label for="recipient-number">Recipient's Phone Number:</label>
+                <input id="recipient-number" name="recipient-number" type="tel" placeholder="Enter recipient's phone number" pattern="\d{10,15}" required>
+
+                
+                <label for="message-type">Select Message Type:</label>
+                <select id="message-type" name="message-type" required>
+                    <option value="" disabled selected>Select message type</option>
+                    <option value="whatsapp">WhatsApp</option>
+                    <option value="sms">SMS</option>
+                </select>
+                <label for="schedule-date">Select a Date to Send the Message:</label>
+                <input id="schedule-date" name="schedule-date" type="date" required>
+
+                <label for="schedule-time">Select a Time to Send the Message:</label>
+                <input id="schedule-time" name="schedule-time" type="time" required>
+
+                <button type="submit">Schedule Message</button>
+            </form>
+        </section>
+    </main>
+    <footer id="about">
+        <section>
+            <h2>About Greetomation</h2>
+            <p>Greetomation is your personal greeting assistant, helping you send personalized and scheduled messages to your loved ones for any occasion.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: support@greetomation.com</p>
+            <p>Phone: +1 800 123 4567</p>
+        </section>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
